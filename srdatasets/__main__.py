@@ -67,7 +67,7 @@ def read_arguments():
     parser_g.add_argument("--rating-threshold",
                           type=int,
                           default=4,
-                          help="[Amazon-X, Movielens20M, Yelp] ratings great or equal than this are treated as valid")
+                          help="[Amazon-X, Movielens20M, MovieLens1M, Yelp] ratings great or equal than this are treated as valid")
     parser_g.add_argument("--item-type",
                           type=str,
                           choices=["song", "artist"],

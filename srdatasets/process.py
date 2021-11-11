@@ -41,7 +41,7 @@ def _process(args):
         "pre_sessions": args.pre_sessions,
         "pick_targets": args.pick_targets
     }
-    if classname in ["Amazon", "MovieLens20M", "Yelp"]:
+    if classname in ["Amazon", "MovieLens20M", "MovieLens1M", "Yelp"]:
         config["rating_threshold"] = args.rating_threshold
     elif classname == "Lastfm1K":
         config["item_type"] = args.item_type
@@ -49,7 +49,7 @@ def _process(args):
     logger.info("Transforming...")
     if classname == "Amazon":
         df = d.transform(sub, args.rating_threshold)
-    elif classname in ["MovieLens20M", "Yelp"]:
+    elif classname in ["MovieLens20M", "MovieLens1M", "Yelp"]:
         df = d.transform(args.rating_threshold)
     elif classname == "FourSquare":
         df = d.transform(sub)
